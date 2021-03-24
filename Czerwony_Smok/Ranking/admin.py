@@ -26,5 +26,5 @@ class FighterAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'value', 'status']
+    list_display = ['id', 'value', 'status', 'payer', 'payer1']
     list_filter = ['value']

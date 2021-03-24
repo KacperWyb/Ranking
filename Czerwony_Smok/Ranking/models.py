@@ -8,11 +8,14 @@ class Fighter(models.Model):
     club = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Payment(models.Model):
-    #payer = models.ForeignKey(Fighter, on_delete=models.CASCADE)
+    payer1 = models.CharField(max_length=30)
+    payer = models.CharField(max_length=30)
     value = models.CharField(max_length=30)
     status = models.CharField(max_length=30)
 
+    def __str__(self):
+        return f'ID {self.id}'
