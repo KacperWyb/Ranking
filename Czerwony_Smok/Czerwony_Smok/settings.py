@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'Ranking.apps.RankingConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -5,7 +5,6 @@ from .models import Fighter, Payment
 
 class PaymentInline(admin.TabularInline):
     model = Payment
-    print(model)
 
 
 @admin.register(Fighter)
