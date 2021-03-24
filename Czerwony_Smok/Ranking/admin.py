@@ -3,17 +3,18 @@ from django.utils.html import format_html
 from .models import Fighter, Payment
 
 
-# class PaymentInline(admin.TabularInline):
-#     model = Payment
+class PaymentInline(admin.TabularInline):
+    model = Payment
+    print(model)
 
 
 @admin.register(Fighter)
 class FighterAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'surname', 'club', 'show_url']
     list_filter = ['name', 'surname']
-    # inlines = [
-    #     PaymentInline
-    # ]
+    inlines = [
+        PaymentInline
+    ]
 
     def show_url(self, obj):
         if len(obj.name) is not None:
@@ -26,5 +27,5 @@ class FighterAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['id', 'value', 'status', 'payer', 'payer1']
+    list_display = ['id', 'fighter', 'value', 'status']
     list_filter = ['value']

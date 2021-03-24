@@ -12,8 +12,7 @@ class Fighter(models.Model):
 
 
 class Payment(models.Model):
-    payer1 = models.CharField(max_length=30)
-    payer = models.CharField(max_length=30)
+    fighter = models.ForeignKey(Fighter, on_delete=models.CASCADE)
     value = models.CharField(max_length=30)
     status = models.CharField(max_length=30)
 
